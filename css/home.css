@@ -1,0 +1,23 @@
+/* Home page treatments */
+
+#home .masthead .header h1
+{
+	color: #0A741C;
+	font-size: 48px;
+	font-family: 'Cabin Condensed';
+
+	text-align: center;
+
+	margin: 0 auto;
+}
+
+#home .content h2
+{
+	color: #FFFFFF;
+	font-size: 32px;
+	font-family: 'Cabin Condensed';
+
+	text-align: center;
+
+	margin: 0 auto;
+}
