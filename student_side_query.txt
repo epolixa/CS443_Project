@@ -1,0 +1,19 @@
+SELECT cid, prefix, id
+FROM student S, taken T, course C
+WHERE  T.student_sid = S.sid AND
+	   T.course_cid = C.cid  AND
+	   S.sid = 'given sid';
+
+SELECT cid, prefix, id
+FROM student S, taken T, course C
+WHERE  T.student_sid = S.sid AND
+	   T.course_cid = C.cid  AND
+	   S.sid = 'given sid'   AND
+	   semester = 'given year';
+
+SELECT cid,prefix,id
+FROM student S, taken T, course C
+WHERE  T.student_sid = S.sid AND
+	   T.course_cid = C.cid  AND
+	   grade = 'F'           AND
+	   sid = 'given sid';
