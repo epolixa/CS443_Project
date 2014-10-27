@@ -1,5 +1,51 @@
 /* General structure */
 
-body {
-	background: #9FC2FE;
+.inner_container {
+	width: 595px;
+
+	background: #ffffff;
+	font-family: 'Cabin Condensed';
+
+	margin: 50px auto 0 auto;
+}
+.inner_container > div {
+	border: 2px solid #000000;
+}
+
+
+.header {
+	height: 30px;
+}
+.header > div {
+	display: inline-block;
+	margin-right: 10px;
+}
+.header .header_button {
+	width: 30px;
+	border-left: 2px solid #000000;
+	border-right: 2px solid #000000;
+}
+.header .header_button a {
+	width: 30px;
+	height: 30px;
+	display: block;
+}
+.header .back_button {
+	background: url(../../images/back_icon.png) center no-repeat;
+	float: left;
+}
+.header .page_title {
+	font-size: 22px;
+	float: left;
+}
+.header .identity {
+	font-size: 14px;
+	float: right;
+}
+
+
+.content {
+	height: 328px;
+
+	padding: 20px;
 }
