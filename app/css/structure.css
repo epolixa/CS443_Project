@@ -31,7 +31,7 @@
 	display: block;
 }
 .header .back_button {
-	background: url(../../images/back_icon.png) center no-repeat;
+	background: url(../images/back_icon.png) center no-repeat;
 	float: left;
 }
 .header .page_title {
