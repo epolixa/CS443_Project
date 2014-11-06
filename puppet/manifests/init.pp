@@ -1,12 +1,21 @@
 exec { 'apt-get update':
-     path => '/usr/bin',
+  path => '/usr/bin',
 }
 
 package { 'emacs':
-	ensure => present,
+  ensure => present,
+}
+
+package { 'curl':
+  ensure => present,
+}
+
+package { 'build-essential':
+  ensure => present,
 }
 
 file { '/var/www/':
-     ensure => 'directory',
+  ensure => 'directory',
 }
-include nginx, php, mysql
+
+include nginx, php, mysql, bootstrap
