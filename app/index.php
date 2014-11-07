@@ -1,41 +1,27 @@
 <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
 
-<!--
-	Study Plan Manager
-	Created by Erich Polixa, Alan Zimmer, Hao Peng, Jake Israel, Eric Rodefeld for CS 423
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
--->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <h1>Hello, world!</h1>
 
-<html id="home">
-	<head>
-		<title>Study Plan Manager - Home</title>
-
-		<!-- CSS -->
-		<link rel="stylesheet" type="text/css" href="css/base.css">
-
-		<!-- JS -->
-		<script src="js/jquery-1.11.1.min.js"></script>
-		<script src="js/onload.js"></script>
-		<script src="js/home.js"></script>
-	</head>
-	<body>
-		<div class="container">
-			<div class="inner_container">
-				<div class="header">
-					<div class="back_button header_button">
-						<a href="#"></a>
-					</div>
-					<div class="page_title">Study Plan Manager
-					</div>
-					<div class="identity">Signed in as dhd
-					</div>
-				</div>
-
-				<div class="content">
-					<h2>body content</h2>
-				</div> <!-- /content -->
-
-			</div>
-		</div> <!-- /container -->
-	</body>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
 </html>
