@@ -32,7 +32,7 @@ class bootstrap {
 
   file { '/var/www/app/js/bootstrap.min.js':
     ensure => 'link',
-    target => '../../bootstrap/-3.3.0dist/js/bootstrap.min.js',
+    target => '../../bootstrap-3.3.0/dist/js/bootstrap.min.js',
     require => File['/bootstrap'],
   }
   
@@ -52,6 +52,13 @@ class bootstrap {
   exec { 'install-grunt-global':
     unless => 'which grunt',
     command => 'npm install -g grunt-cli',
+    path => ['/bin', '/usr/bin'],
+    require => Package['nodejs'],
+  }
+
+  exec { 'install-bootlint-global':
+    unless => 'which bootlint',
+    command => 'npm install -g bootlint',
     path => ['/bin', '/usr/bin'],
     require => Package['nodejs'],
   }
