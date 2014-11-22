@@ -4,7 +4,7 @@
 typedef struct s_node
 {
   string course_name;
-  s_node** prereq_list;   // prereq_list stores all the prerequisites of the current course
+  string prereq_list;   // prereq_list stores all the prerequisites of the current course
   int width;		    // width is the length of the prereq_list
   int max_depth;        // the maximum depth of the current course, an integer that is initialized as 0, will be updated
   int num_reqs;         // the sum of each chain's length of the current course, an integer that is initialized as 0, will be updated
