@@ -1,4 +1,6 @@
 #include <string>
+#include <utility>
+#include <algorithm>
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -47,6 +49,7 @@ int main(int argc, char** argv)
     string token;
     char *buffer;
     size_t pos;
+    vector<pair<string, double> > maxheap;
 
     if(argc != 2)
         print_and_exit("Not enough arguments given, run as ./scheduler test_case_textfile");
@@ -83,6 +86,15 @@ int main(int argc, char** argv)
 
     for(map<string, t_course*>::iterator it = courses.begin(); it != courses.end(); ++it)
     {
-        cout << it->first << "  " << it->second->max_chain << "  " << it->second->total_of_chains << endl;
+        maxheap.push_back(make_pair(it->first, (double)it->second->max_chain + (double)it->second->total_of_chains/1000));
+    }
+
+    sort(maxheap.begin(), maxheap.end(), [](std::pair<string, double> const & lhs, std::pair<string, double> const & rhs) {
+            return lhs.second > rhs.second;
+            });
+
+    for(vector<pair<string, double> >::iterator it = maxheap.begin(); it != maxheap.end(); ++it)
+    {
+        cout << it->first << "  " << it->second << endl;
     }
 }
