@@ -18,16 +18,31 @@ typedef struct s_node
   bool is_taken;            // indicates whether or not this class has been taken, initialized to false
 } t_course;
 
+map<string, t_course*> courses;
+
 void print_and_exit(string str)
 {
     cout << str << endl;
     exit(0);
 }
 
+void chain_checker(t_course *course)
+{
+    int i=0;
+    t_course *temp;
+    for(; i<course->prereqs.size(); i++)
+    {
+        temp = courses[course->prereqs[i]];
+        temp->total_of_chains++;
+        if(temp->max_chain < course->max_chain+1)
+            temp->max_chain = course->max_chain+1;
+        chain_checker(temp);
+    }
+}
+
 int main(int argc, char** argv)
 {
     ifstream case_file;
-    map<string, t_course*> courses;
     string line;
     string token;
     char *buffer;
@@ -63,11 +78,11 @@ int main(int argc, char** argv)
     }
     for(map<string, t_course*>::iterator it = courses.begin(); it != courses.end(); ++it)
     {
-        cout << it->first;
-        for(int i=0; i<it->second->prereqs.size(); i++)
-        {
-            cout << "   " << it->second->prereqs[i];
-        }
-        cout << endl;
+        chain_checker(courses[it->first]);
+    }
+
+    for(map<string, t_course*>::iterator it = courses.begin(); it != courses.end(); ++it)
+    {
+        cout << it->first << "  " << it->second->max_chain << "  " << it->second->total_of_chains << endl;
     }
 }
