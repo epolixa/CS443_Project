@@ -146,7 +146,6 @@ int main(int argc, char** argv)
                 {
                     schedule[i][j] = it->first;
                     found_course = true;
-		    courses[it->first]->is_taken=true;
                     maxheap.erase(it);
                     break;
                 }
@@ -156,6 +155,10 @@ int main(int argc, char** argv)
             if(!found_course)
                 print_and_exit("Could not create a course");
         }
+
+	// update classes for the next semester
+	for(j=0; j<5; j++)
+	  courses[schedule[i][j]]->is_taken=true;
     }
 
     // prints out the schedule
